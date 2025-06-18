@@ -22,6 +22,7 @@ const Edit: React.FC<EditTenantModalProps> = ({
     status: "Active" as "Active" | "Inactive",
     createdDate: "",
   });
+  
 
   useEffect(() => {
     if (tenant) {

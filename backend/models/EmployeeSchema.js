@@ -1,5 +1,4 @@
-import mongoose from "mongoose"; // ES Module import
-
+import mongoose from "mongoose"; 
 const EmployeeSchema = new mongoose.Schema({
    Name: {
     type: String,
@@ -18,7 +17,7 @@ const EmployeeSchema = new mongoose.Schema({
   },
 });
 
-// Pre-save hook
+
 EmployeeSchema.pre("save", function (next) {
   if (!this.EmailID || this.EmailID.trim() === "") {
     this.EmailID = undefined;
@@ -29,6 +28,6 @@ EmployeeSchema.pre("save", function (next) {
   next();
 });
 
-// Export ES Module style
+
 const EmployeeModel = mongoose.model("EmployeeData", EmployeeSchema);
 export default EmployeeModel;

@@ -15,14 +15,15 @@ const Login = () => {
     e.preventDefault();
     console.log(email, password);
     try {
-      console.log();
-      const response = await fetch("http://localhost:4000/api/user/LogIn", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
+    
+
+     const response = await fetch(`${import.meta.env.VITE_BACKEND_API_URL}/api/user/LogIn`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({ email, password }),
+});
 
       if (!response.ok) {
         throw new Error("Invalid credentials or server error");

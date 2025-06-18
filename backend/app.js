@@ -1,7 +1,7 @@
 // app.js
 import express from 'express';
 import cors from 'cors';
-import EmployeeRoute from './routes/Employee.js'; // Notice the `.js` extension
+import EmployeeRoute from './routes/Employee.js'; 
 
 const app = express();
 
